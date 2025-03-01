@@ -1,0 +1,111 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.conatiner_signup{
+    height: auto;
+    width: 100%;
+    background-image: url('https://i0.wp.com/picjumbo.com/wp-content/uploads/red-and-blue-pillars-wallpaper-abstract-background-free-image.jpeg?w=600&quality=80');
+    background-size: cover;
+    background-color: rgb(22, 65, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.conatiner_signup .signform{
+    height:auto;
+    width: 450px;
+    padding: 10px;
+    /* background-color: rgba(6, 2, 6, 0.37); */
+    background-color: transparent;
+    /* border: 2px dotted black; */
+    box-shadow: -2px -1px 5px 8px red;
+    border: none;
+   
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.conatiner_signup .signform h1{
+    font-size: 40px;
+    color: wheat;
+    font-style: italic;
+    padding: 5px;
+
+}
+.conatiner_signup .signform form{
+    width: 90%;
+    height: auto;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    color: white;
+    gap: 20px;
+
+}
+.conatiner_signup .signform form div{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+}
+.conatiner_signup .signform form div label{
+    font-size: 20px;
+}
+.conatiner_signup .signform form div  input{
+    height: 35px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.conatiner_signup .signform form .button{
+    width: 100%;
+
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.conatiner_signup .signform form .button button{
+    padding: 8px;
+    font-size: 20px;
+    font-style: initial;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    border: 0.2px solid black;
+    background: linear-gradient(red,blue);
+    color: white;
+    /* border: none; */
+    border: 0.2px solid transparent;
+   
+}
+.conatiner_signup .signform form .button p{
+    color: rgb(203, 179, 179);
+}
+.conatiner_signup .signform form .button p span{
+    color:blue;
+}
+.conatiner_signup .signform form .button p span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.conatiner_signup .signform form .button button:hover{
+    background-color:linear-gradient(rgb(244, 237, 237),rgb(255, 255, 255));
+    color: rgb(170, 160, 160);
+    cursor: pointer;
+}
+ @media screen and (max-width: 420px) {
+    
+    
+} 

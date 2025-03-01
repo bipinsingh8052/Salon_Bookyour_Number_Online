@@ -1,0 +1,138 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.booking_header{
+    background-color: yellowgreen;
+    padding: 10px;text-align: center;
+    color: rgb(6, 23, 12);
+    font-weight: 600;
+}
+.cartsall{
+    background-color: aquamarine;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.cartsall .cart{
+    height: 350px;
+    width: 250px;
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    box-shadow: -0.5px -1px 5px 1px green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: white;
+}
+.cartsall .cart .images{
+    height: 58%;
+    width: 100%;
+}
+.cartsall .cart .images img{
+    height: 100%;
+    width: 100%;
+}
+.cartsall .cart .paragraph
+{
+    height: 30%;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.cartsall .cart .paragraph h5{
+    color: rgb(0, 0, 0);
+    font-size:20px;
+}
+.cartsall .cart .paragraph p{
+    display: flex;
+    gap: 5px;
+    color: rgb(61, 48, 48);
+    font-size: 14px;
+}
+
+.cartsall .cart .paragraph p .locations{
+    color: blue;
+    font-size: 18px;
+}
+.cartsall .cart .paragraph p .comments{
+    color: rgb(2, 99, 78);
+    font-size: 20px;
+}
+
+
+
+.cartsall .cart button{
+    border: none;
+    font-weight: 600;
+    font-size: 17px;
+    outline: none;
+width: 100%;
+border: 0.5px solid transparent;
+background-color: rgb(221, 17, 92);
+color: white;
+text-align: center;
+height: 10%;
+border-radius: 10px;
+}
+
+.cartsall .cart button:hover{
+    cursor: pointer;
+    background-color: wheat;
+    color:  rgb(221, 17, 92);
+    border: 0.5px solid  rgb(221, 17, 92);
+}
+
+
+
+.bookingpage{
+
+
+    display: flex;
+    flex-direction: column;
+gap: 20px;
+}
+.bookingpage div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.bookingpage div label{
+    color: black;
+    font-size: 18px;
+}
+.bookingpage div label span{
+    color: red;
+}
+.bookingpage div input{
+    padding-left: 10px;
+    border: none;
+    border: 1px solid rgb(11, 11, 158);
+    outline: none;
+    border-radius: 5px;
+}
+
+.bookingBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.bookingBtn Button{
+    text-align: center;
+    background-color: green;
+    color: black;
+}

@@ -7,7 +7,6 @@ export default function Layout() {
   return (
     <>
       <Tonavbar/>
-      <Caulsor/>
       <main>
         <Outlet/>
       </main>

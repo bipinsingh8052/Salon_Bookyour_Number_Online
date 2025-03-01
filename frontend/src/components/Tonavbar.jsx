@@ -20,17 +20,15 @@ export default function Tonavbar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link as={Link} to="" className='active'>Home</Nav.Link>
-            <Nav.Link  as={Link} to="" >Booking</Nav.Link>
+            <Nav.Link as={Link} to="/" className='active'>Home</Nav.Link>
+            <Nav.Link  as={Link} to="about" >Booking</Nav.Link>
             <NavDropdown title="Salon Own Only" id="navbarScrollingDropdown">
-              <NavDropdown.Item as={Link} to="" >Salon Own Only</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="" >
-                Another action
-              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/signUp" >SignUp</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="" >
-                Something else here
+              <NavDropdown.Item as={Link} to="/login" >
+                Login
               </NavDropdown.Item>
+             
             </NavDropdown>
            
           </Nav>
