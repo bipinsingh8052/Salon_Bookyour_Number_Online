@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FaLocationDot } from "react-icons/fa6";
@@ -31,6 +31,12 @@ const submit=(e)=>{
     console.log(booking)
     setShow(false)
 }
+
+
+
+useEffect(()=>{
+
+},[])
   return (
     <>
 

@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import '../css/login.css'
+import axios from 'axios'
+import Confil from '../Confil';
+import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
     let [login,setlogin]=useState({});
+    let nav=useNavigate();
 
 
 
@@ -16,15 +21,28 @@ export default function Login() {
 
 
 
-    const FromCheck=(e)=>{
+    const FromCheck=async(e)=>{
             e.preventDefault();
-            console.log(login)
+            let api =`${Confil}/salon/login`;
+            try {
+                let response =await axios.post(api,login);
+                // console.log(response)
+                toast.success("SuccessFully login")
+                nav("/home");
+                
+            } catch (error) {
+                toast.error(error.response.data.msg)
+                // console.log(error.response.data.msg);
+                
+            }
 
         }
     const gotToSignUp=()=>{
+        nav("/signup")
 
     }
   return (
+    <>
     <div className="conatiner_login">
           <div className="form">
               <h1>Login</h1>
@@ -46,5 +64,8 @@ export default function Login() {
               </form>
           </div>
       </div>
+
+      <Toaster/>
+      </>
   )
 }

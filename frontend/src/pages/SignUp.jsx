@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import '../css/signUp.css'
+import Confil from '../Confil';
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 export default function SignUp() {
   let [login,setlogin]=useState({});
- 
+ let nav=useNavigate();
  
  
  
@@ -16,13 +20,23 @@ export default function SignUp() {
  
  
  
-     const FromCheck=(e)=>{
+     const FromCheck=async(e)=>{
              e.preventDefault();
-             console.log(login)
+             let api =`${Confil}/salon/signup`;
+             try {
+                 let response =await axios.post(api,login);
+                 toast.success(response.data.msg)
+                 nav("/login")
+                 
+             } catch (error) {
+                toast.error(error.response.data.msg)
+                 
+             }
  
          }
     
    return (
+    <>
      <div className="conatiner_signup">
            <div className="signform">
                <h1>SignUp</h1>
@@ -65,5 +79,8 @@ export default function SignUp() {
                </form>
            </div>
        </div>
+
+<Toaster/>
+</>
    )
  }
