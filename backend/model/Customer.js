@@ -4,6 +4,11 @@ const Schema = new mongoose.Schema({
     email:String,
     date:String,
     time:String,
-    number:Number
+    number:Number,
+    salonId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"shopOwner"
+    }
 })
 module.exports=mongoose.model("custmer" ,Schema)
+

@@ -50,14 +50,43 @@ let LoginPage =async(req,res)=>{
              return res.status(404).send({msg:'Invalid password'});
         }
 
-        res.status(200).send("okk");
+        res.status(200).send(data._id);
     } catch (error) {
         res.status(500).send({msg:"Server error"})
     }
 
     
 }
+
+
+const DisplayPage=async(req,res)=>{
+    try {
+        let data= await SalonModel.find();
+        // console.log(data)
+        res.status(200).send(data)
+    } catch (error) {
+        res.status(400).send("not found");
+    }
+}
+
+
+
+
+const dashboard =async(req,res)=>{
+    // console.log(req.body);
+    const { id }=req.body;
+    try {
+        let data =await custmerModel.find({salonId:id})
+        console.log(data);
+        res.status(200).send(data);
+    } catch (error) {
+        res.status(500).send({msg:"Server Error"})
+    }
+   
+}
 module.exports={
     SignupPage,
-    LoginPage
+    LoginPage,
+    DisplayPage,
+    dashboard
 }
