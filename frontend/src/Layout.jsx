@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <>
       <Tonavbar/>
-      <main>
+      <main >
         <Outlet/>
       </main>
       <Tofooter/>

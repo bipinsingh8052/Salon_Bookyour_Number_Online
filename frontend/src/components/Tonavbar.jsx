@@ -4,10 +4,22 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/navba.css'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { searchit } from '../slices/Searchslice';
+
 
 export default function Tonavbar() {
+  let[search,setSearch]=useState("")
+  let nav=useNavigate()
+  let dispatch =useDispatch();
+  let searchbtn=()=>{
+    // console.log(search)
+    dispatch(searchit(search));
+    nav("/search")
+  }
   return (
     <>
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -38,10 +50,11 @@ export default function Tonavbar() {
               placeholder="Search"
               className="me-2 bg-light text-dark searchbarinput"
               data-bs-theme="dark"
-              
+              name="search"
+              onChange={(e)=>{setSearch(e.target.value)}}
 
             />
-            <Button variant="outline-success" className='btnsearchbar'>Search</Button>
+            <Button variant="outline-success" className='btnsearchbar' onClick={searchbtn} >Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

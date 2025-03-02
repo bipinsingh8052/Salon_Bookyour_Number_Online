@@ -1,8 +1,8 @@
 import { configureStore} from '@reduxjs/toolkit'
-import Searchinput from './slices/Searchslice'
+import Input from './slices/Searchslice'
 const Store=configureStore({
     reducer:{
-        search:Searchinput
+        search:Input,
     }
 })
 

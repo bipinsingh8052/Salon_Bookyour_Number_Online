@@ -5,7 +5,27 @@ import { FaRegEye } from "react-icons/fa";
 import { GiBed } from "react-icons/gi";
 import { RiBrushAiLine } from "react-icons/ri";
 import { GiFingernail } from "react-icons/gi";
+import { FaLocationDot } from "react-icons/fa6";
+import { LuMessageCircleMore } from "react-icons/lu";
+import { useEffect, useState } from 'react';
+import Confil from '../Confil';
+import axios from 'axios';
 export default function Caulsor() {
+     let [carts,setcarts]=useState([])
+     const loading=async()=>{
+        let api=`${Confil}/salon/data`
+        try {
+            let response = await axios.get(api);
+            console.log(response);
+            setcarts(response.data);
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+    useEffect(()=>{
+    loading()
+    },[])
   return (
     <>
     <div className='herosection'>
@@ -45,6 +65,28 @@ export default function Caulsor() {
             </div>
         </div>
     </div>
+
+<h1 className='booking_header'>You can Book it </h1>
+    <div className='cartsall'>
+        {
+            carts.map((e,index)=>{return(
+                <div className="cart" key={index}>
+            <div className="images">
+                <img src={e.imageurl} alt="" />
+            </div>
+            <div className="paragraph">
+                <h5>{e.shopname}</h5>
+                <p><span><FaLocationDot className='locations' /></span>{e.address} </p>
+                <p><span> <LuMessageCircleMore className='comments'/></span> shows comments</p>
+            </div>
+           
+        </div>
+            )})
+        }
+</div>
+
+
+
     </>
   )
 }

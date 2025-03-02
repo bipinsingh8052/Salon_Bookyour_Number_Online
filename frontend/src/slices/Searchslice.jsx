@@ -6,10 +6,11 @@ const Searchslice =createSlice({
     },
     reducers:{
         searchit:(state,actions)=>{
-            console.log("searchit");
+            state.input=actions.payload
+            console.log(state.input)
         },
         deleteit:(state,actions)=>{
-            console.log("delete");
+            state.input=actions.payload
         }
     }
 })

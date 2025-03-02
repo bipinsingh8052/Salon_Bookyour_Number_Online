@@ -4,10 +4,13 @@ import axios from 'axios'
 import Confil from '../Confil';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { searchit } from '../slices/Searchslice';
+import { useDispatch } from 'react-redux';
 export default function Login() {
     let [login,setlogin]=useState({});
+    let [id,setid]=useState("")
     let nav=useNavigate();
-
+    let dispatch =useDispatch();
 
 
 
@@ -26,9 +29,11 @@ export default function Login() {
             let api =`${Confil}/salon/login`;
             try {
                 let response =await axios.post(api,login);
-                // console.log(response)
+                console.log(response.data)
+                setid(response.data);
                 toast.success("SuccessFully login")
-                nav("/home");
+                localStorage.setItem("id",response.data);
+                nav("/dashboard");
                 
             } catch (error) {
                 toast.error(error.response.data.msg)
