@@ -25,7 +25,7 @@ const SignupPage=async(req,res)=>{
             email:email,
             imageurl:image,
             address:address,
-            password:hasPassword,
+            password:hasPassword
 
         })
         res.status(201).send({msg:"Succesfuly singup"});

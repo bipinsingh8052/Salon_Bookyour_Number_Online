@@ -26,9 +26,6 @@ const BookingPage=async(req,res)=>{
             salonId:Salonid
 
         })
-
-        let  SalonAddData =await SalonModel.findByIdAndUpdate(Salonid,{$push:{CustmerID:data._id}})
-
         res.status(200).send({msg:"booking is successfully completed"})
       } catch (error) {
         res.status(400).send({msg:"server Error"});
@@ -51,21 +48,9 @@ const SearchPage=async(req,res)=>{
 }
 
 
-// const dashboard =async(req,res)=>{
-//     // console.log(req.body);
-//     const { id }=req.body;
-//     try {
-//         let data =await SalonModel.find(id).populate("CustmerID")
-//         console.log(data);
-//         res.send("okk")
-//     } catch (error) {
-//         res.status(500).send({msg:"Server Error"})
-//     }
-   
-// }
 
 module.exports={
     BookingPage,
     SearchPage,
-    // dashboard
+
 }

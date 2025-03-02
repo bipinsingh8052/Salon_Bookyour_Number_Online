@@ -6,11 +6,7 @@ const schema =new mongoose.Schema({
     email:String,
     imageurl:String,
     address:String,
-    password:String,
-    CustmerID:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"custmer"
-    }
+    password:String
 
 })
 

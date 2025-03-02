@@ -3,10 +3,9 @@ const app =express();
 const bodyParser=require("body-parser");
 const cors=require("cors");
 const mongoose =require("mongoose");
-require("dotenv").config();
 const RouteSalon =require("./Routers/SaloneOwnerRouter")
 const RouteCustmer=require("./Routers/CustomerRoute")
-
+require("dotenv").config();
 app.use(cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
