@@ -1,16 +1,10 @@
 const SalonModel =require("../model/Salone")
 const custmerModel =require("../model/Customer")
-const bcrypt =require("bcrypt");
+const bcrypt =require("bcryptjs");
 const SignupPage=async(req,res)=>{
-    // console.log(req.body);
+   
     const {
-        email,
-        number,
-        image,
-        address,
-        nameshop,
-        password
-      }=req.body;
+        email, number,image,address,nameshop,password}=req.body;
 
       try {
         let findData =await SalonModel.findOne({email:email});
